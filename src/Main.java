@@ -16,7 +16,7 @@ public class Main extends PApplet {
 
 	public void setup() {
 		log = new Logica(this);
-		font = createFont("Roboto-Bold.ttf", 32);
+		font = createFont("Roboto-Bold.ttf", 17);
 		textFont(font);
 	}
 

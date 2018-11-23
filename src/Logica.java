@@ -6,7 +6,6 @@ public class Logica {
 	private int pantalla;
 	private Home home;
 	private Calendario calen;
-	private Mascota mas;
 	private Concentracion con;
 	private Usuario us;
 	private int encima;
@@ -17,7 +16,6 @@ public class Logica {
 		pantalla = 1;
 		home = new Home(app);
 		calen = new Calendario(app);
-		mas = new Mascota(app);
 		con = new Concentracion(app);
 		us = new Usuario(app);
 		buscador = app.loadImage("buscador.png");
@@ -53,15 +51,11 @@ public class Logica {
 			break;
 		case 3:
 
-			mas.pintar();
+			us.pintar();
 			break;
 		case 4:
 
 			con.pintar();
-			break;
-		case 5:
-
-			us.pintar();
 			break;
 		}
 		if (app.mouseX > 20 && app.mouseX < 70 && app.mouseY > 130 && app.mouseY < 200) {
@@ -100,13 +94,10 @@ public class Logica {
 			calen.mouse();
 			break;
 		case 3:
-			mas.mouse();
+			us.mouse();
 			break;
 		case 4:
 			con.mouse();
-			break;
-		case 5:
-			us.mouse();
 			break;
 		}
 	}

@@ -9,88 +9,83 @@ public class Logica {
 	private Mascota mas;
 	private Concentracion con;
 	private Usuario us;
-	private PImage nav, ppal, calendar, ppal2, mascota, timer, mascota2, timer2, calendar2;
 	private int encima;
+	private PImage nav, barra, cuaLog, casa, casa2, estu, estu2, cal, cal2, ojo, lupa, buscador, estu3;
 
 	public Logica(PApplet app) {
 		this.app = app;
 		pantalla = 1;
-		encima = 0;
-		nav = app.loadImage("Group 4.png");
-		ppal = app.loadImage("ppal.png");
-		ppal2 = app.loadImage("ppal2.png");
-		mascota = app.loadImage("Mascota.png");
-		timer = app.loadImage("timer.png");
-		calendar = app.loadImage("calendar.png");
-		mascota2 = app.loadImage("Mascotab.png");
-		timer2 = app.loadImage("timerb.png");
-		calendar2 = app.loadImage("calendarb.png");
 		home = new Home(app);
 		calen = new Calendario(app);
 		mas = new Mascota(app);
 		con = new Concentracion(app);
 		us = new Usuario(app);
+		buscador = app.loadImage("buscador.png");
+		lupa = app.loadImage("buscar.png");
+		nav = app.loadImage("barra-nav.png");
+		barra = app.loadImage("barra-arriba.png");
+		estu3 = app.loadImage("estubar.png");
+		cuaLog = app.loadImage("cuadros-logo.png");
+		casa = app.loadImage("home.png");
+		estu = app.loadImage("estu.png");
+		estu2 = app.loadImage("estu2.png");
+		cal2 = app.loadImage("cal2.png");
+		cal = app.loadImage("cal.png");
+		casa2 = app.loadImage("ppal.png");
+		ojo = app.loadImage("ojo.png");
+		encima = 1;
 	}
 
 	public void pintar() {
+		if (pantalla != 0) {
+			navegacion();
+		}
+
 		switch (pantalla) {
 		case 0:
 
 			break;
 		case 1:
-			navegacion();
 			home.pintar();
 			break;
 		case 2:
-			navegacion();
 			calen.pintar();
 			break;
 		case 3:
-			navegacion();
 
 			mas.pintar();
 			break;
 		case 4:
-			navegacion();
 
 			con.pintar();
 			break;
 		case 5:
-			navegacion();
 
 			us.pintar();
 			break;
 		}
-		if (pantalla != 0) {
-			if (app.mouseX > 11 && app.mouseX < 185 && app.mouseY > 134 && app.mouseY < 173) {
-				encima = 1;
-			} else if (app.mouseX > 11 && app.mouseX < 185 && app.mouseY > 224 && app.mouseY < 260) {
-				encima = 2;
-
-			} else if (app.mouseX > 11 && app.mouseX < 185 && app.mouseY > 307 && app.mouseY < 347) {
-				encima = 3;
-			} else if (app.mouseX > 11 && app.mouseX < 185 && app.mouseY > 397 && app.mouseY < 438) {
-				encima = 4;
-			} else {
-				encima = 0;
-			}
+		if (app.mouseX > 20 && app.mouseX < 70 && app.mouseY > 130 && app.mouseY < 200) {
+			encima = 1;
+		} else if (app.mouseX > 20 && app.mouseX < 70 && app.mouseY > 240 && app.mouseY < 300) {
+			encima = 2;
+		} else if (app.mouseX > 20 && app.mouseX < 70 && app.mouseY > 360 && app.mouseY < 410) {
+			encima = 3;
+		} else {
+			encima = 0;
 		}
 	}
 
 	public void mouse() {
 		System.out.println(app.mouseX + " " + app.mouseY);
 		if (pantalla != 0) {
-			if (app.mouseX > 11 && app.mouseX < 185 && app.mouseY > 134 && app.mouseY < 173) {
+			if (app.mouseX > 20 && app.mouseX < 70 && app.mouseY > 130 && app.mouseY < 200) {
 				pantalla = 1;
 			}
-			if (app.mouseX > 11 && app.mouseX < 185 && app.mouseY > 224 && app.mouseY < 260) {
+			if (app.mouseX > 20 && app.mouseX < 70 && app.mouseY > 240 && app.mouseY < 300) {
 				pantalla = 2;
 			}
-			if (app.mouseX > 11 && app.mouseX < 185 && app.mouseY > 307 && app.mouseY < 347) {
+			if (app.mouseX > 20 && app.mouseX < 70 && app.mouseY > 350 && app.mouseY < 420) {
 				pantalla = 3;
-			}
-			if (app.mouseX > 11 && app.mouseX < 185 && app.mouseY > 397 && app.mouseY < 438) {
-				pantalla = 4;
 			}
 
 		}
@@ -117,46 +112,40 @@ public class Logica {
 	}
 
 	public void navegacion() {
-		app.image(nav, 0, -2);
-
-		app.imageMode(PApplet.CENTER);
-		app.image(ppal2, 11 + ppal.width / 2, 155);
-		app.image(calendar, 11 + calendar.width / 2, 243);
-		app.image(mascota, 11 + mascota.width / 2, 327);
-		app.image(timer, 11 + timer.width / 2, 417);
-		app.imageMode(PApplet.CORNER);
-
-		app.fill(197, 197, 197);
-
-		app.imageMode(PApplet.CENTER);
+		app.image(nav, 0, 0);
+		app.image(barra, 112, 19);
+		app.image(ojo, 26, 19);
+		app.image(casa2, 29, 149);
+		app.image(cal, 28.16f, 258.57f);
+		app.image(estu2, 32.85f, 372.65f);
+		app.image(estu, 1086, 32);
+		app.fill(226, 166, 14);
+		app.textSize(20);
+		app.text("Estudiante", 985, 63);
+		app.image(lupa, 923, 44);
+		app.image(buscador, 630, 36);
+		app.fill(144, 144, 144);
+		app.text("Buscar", (float) 649.73, 60);
 		if (pantalla == 1 || encima == 1) {
-			app.fill(232, 71, 91);
-			app.image(ppal, 11 + ppal.width / 2, 155);
+			app.image(cuaLog, 6, 124);
+			app.image(casa, 29, 149);
+			app.fill(209, 59, 78);
+			app.textSize(18);
+			app.text("Inicio", 22, 226);
 		}
-		app.text("Menú Principal", 64, 162);
-		app.fill(197, 197, 197);
 		if (pantalla == 2 || encima == 2) {
-			app.fill(255, 138, 102);
-			app.image(calendar2, 11 + calendar.width / 2, 243);
+			app.image(cuaLog, 6, 231);
+			app.image(cal2, 28.16f, 258.57f);
+			app.fill(241, 135, 104);
+			app.textSize(16);
+			app.text("Calendario", 6, 330);
 		}
-		app.text("Calendario", 64, 250);
-		app.fill(197, 197, 197);
 		if (pantalla == 3 || encima == 3) {
-			app.fill(244, 150, 25);
-			app.image(mascota2, 11 + mascota.width / 2, 327);
-
+			app.image(cuaLog, 6, 349);
+			app.image(estu3, 32.85f, 372.65f);
+			app.textSize(17);
+			app.fill(254, 200, 42);
+			app.text("Perfil", 23, 450);
 		}
-		app.text("Mascota", 64, 336);
-		app.fill(197, 197, 197);
-		if (pantalla == 4 || encima == 4) {
-			app.fill(232, 71, 91);
-			app.image(timer2, 11 + timer.width / 2, 417);
-
-		}
-		app.text("Modo concentración", 64, 424);
-		app.imageMode(PApplet.CORNER);
-
-		app.fill(197, 197, 197);
-
 	}
 }

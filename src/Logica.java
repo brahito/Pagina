@@ -13,7 +13,7 @@ public class Logica {
 
 	public Logica(PApplet app) {
 		this.app = app;
-		pantalla = 3;
+		pantalla = 1;
 		home = new Home(app);
 		calen = new Calendario(app);
 		con = new Concentracion(app);
@@ -52,6 +52,7 @@ public class Logica {
 		case 3:
 
 			us.pintar();
+			
 			break;
 		case 4:
 
@@ -117,26 +118,28 @@ public class Logica {
 		app.image(buscador, 630, 36);
 		app.fill(144, 144, 144);
 		app.text("Buscar", (float) 649.73, 60);
-		if (pantalla == 1 || encima == 1) {
-			app.image(cuaLog, 6, 124);
-			app.image(casa, 29, 149);
-			app.fill(209, 59, 78);
-			app.textSize(18);
-			app.text("Inicio", 22, 226);
-		}
-		if (pantalla == 2 || encima == 2) {
-			app.image(cuaLog, 6, 231);
-			app.image(cal2, 28.16f, 258.57f);
-			app.fill(241, 135, 104);
-			app.textSize(16);
-			app.text("Calendario", 6, 330);
-		}
-		if (pantalla == 3 || encima == 3) {
-			app.image(cuaLog, 6, 349);
-			app.image(estu3, 32.85f, 372.65f);
-			app.textSize(17);
-			app.fill(254, 200, 42);
-			app.text("Perfil", 23, 450);
+		if (pantalla != 0 && pantalla != 4) {
+			if (pantalla == 1 || encima == 1) {
+				app.image(cuaLog, 6, 124);
+				app.image(casa, 29, 149);
+				app.fill(209, 59, 78);
+				app.textSize(18);
+				app.text("Inicio", 22, 226);
+			}
+			if (pantalla == 2 || encima == 2) {
+				app.image(cuaLog, 6, 231);
+				app.image(cal2, 28.16f, 258.57f);
+				app.fill(241, 135, 104);
+				app.textSize(16);
+				app.text("Calendario", 6, 330);
+			}
+			if (pantalla == 3 || encima == 3) {
+				app.image(cuaLog, 6, 349);
+				app.image(estu3, 32.85f, 372.65f);
+				app.textSize(17);
+				app.fill(254, 200, 42);
+				app.text("Perfil", 23, 450);
+			}
 		}
 	}
 }

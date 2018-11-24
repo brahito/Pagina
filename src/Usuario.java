@@ -7,7 +7,7 @@ public class Usuario {
 	private PFont roboto1, roboto2;
 	private PImage cuadro2, cuadro, icono, cuadroUG1, pico, cuadroUG2, conteM, conteM1, acti, actiCua, libro, bomb,
 			mArt, mLibr, mCalc, mBomb, calc, art;
-	private boolean materia;
+	private boolean materia, concentrarse;
 	private float porcentaje1, porcentaje2, porcentaje3, porcentaje4;
 
 	public Usuario(PApplet app) {
@@ -33,6 +33,7 @@ public class Usuario {
 		mCalc = app.loadImage("materiaCalculadora.png");
 		mLibr = app.loadImage("materiaLibro.png");
 		materia = false;
+		concentrarse = false;
 		porcentaje1 = 50;
 		porcentaje2 = 70;
 		porcentaje3 = 60;
@@ -158,15 +159,21 @@ public class Usuario {
 				materia = true;
 			}
 		}
-		if (app.mouseX > 960 && app.mouseX < 1090 && app.mouseY > 400 && app.mouseY < 440) {
-			app.fill(0);
-		}
-		if (app.mouseX > 960 && app.mouseX < 1090 && app.mouseY > 500 && app.mouseY < 540) {
-			app.fill(0);
-		}
-		if (app.mouseX > 960 && app.mouseX < 1090 && app.mouseY > 590 && app.mouseY < 630) {
-			app.fill(0);
+		if (app.mouseX > 960 && app.mouseX < 1090 && app.mouseY > 400 && app.mouseY < 440
+				|| app.mouseX > 960 && app.mouseX < 1090 && app.mouseY > 500 && app.mouseY < 540
+				|| app.mouseX > 960 && app.mouseX < 1090 && app.mouseY > 590 && app.mouseY < 630 && materia == true) {
+			concentrarse = true;
 		}
 
 	}
+
+	public boolean isConcentrarse() {
+		return concentrarse;
+	}
+
+	public void setConcentrarse(boolean concentrarse) {
+		this.concentrarse = concentrarse;
+	}
+
 }
+

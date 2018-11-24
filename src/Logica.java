@@ -13,7 +13,8 @@ public class Logica {
 
 	public Logica(PApplet app) {
 		this.app = app;
-		pantalla = 4;
+
+		pantalla = 1;
 		home = new Home(app);
 		calen = new Calendario(app);
 		con = new Concentracion(app);
@@ -56,6 +57,7 @@ public class Logica {
 				pantalla++;
 				us.setConcentrarse(!us.isConcentrarse());
 			}
+
 			break;
 		case 4:
 

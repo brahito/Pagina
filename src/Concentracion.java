@@ -14,6 +14,7 @@ public class Concentracion {
 		concentracion = app.loadImage("concentracion.png");
 		play = app.loadImage("start.png");
 		stop = app.loadImage("stop.png");
+
 		pause = app.loadImage("pausa.png");
 		roboto1 = app.createFont("Roboto-Bold.ttf", 20);
 		estado = false;
@@ -33,6 +34,7 @@ public class Concentracion {
 		if (app.mouseX > 600 && app.mouseX < 705 && app.mouseY > 555 && app.mouseY < 650 && conteo == false) {
 			app.tint(0, 0, 255, 20);
 			app.image(play, 600, 551);
+
 			app.noTint();
 		}
 		if (app.mouseX > 600 && app.mouseX < 700 && app.mouseY > 555 && app.mouseY < 650 && conteo == true) {

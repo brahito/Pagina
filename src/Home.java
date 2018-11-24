@@ -3,6 +3,7 @@ import java.util.Date;
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
+import processing.event.MouseEvent;
 
 public class Home {
 	private PApplet app;
@@ -10,7 +11,7 @@ public class Home {
 	private String dia;
 	private PImage buho;
 	private PFont roboto1, roboto2;
-	private PImage contenedorNoti, cuadros_notas, rosa, noti, noti2, scroll;
+	private PImage contenedorNoti, cuadros_notas, rosa, noti, noti2, scroll, notis;
 
 	public Home(PApplet app) {
 		this.app = app;
@@ -24,6 +25,7 @@ public class Home {
 		noti = app.loadImage("notificacion.png");
 		noti2 = app.loadImage("notificacion2.png");
 		scroll = app.loadImage("scroll-bar.png");
+		notis = app.loadImage("notis.png");
 	}
 
 	public void pintar() {
@@ -33,7 +35,7 @@ public class Home {
 		app.image(contenedorNoti, 190, 327);
 		app.image(rosa, 192, 327);
 		app.image(noti, 238, 393);
-		app.image(scroll, 751, 394);
+//		app.image(scroll, 751, 394);
 		for (int i = 0; i < 2; i++) {
 			app.image(noti2, 238, noti2.height * i + 481);
 		}
@@ -92,10 +94,12 @@ public class Home {
 		app.fill(255);
 		app.text("Tus Notificaciones", 385, 361);
 		app.image(buho, 873, 394);
+		app.image(notis, 258.95f, 396f);
 	}
 
 	public void mouse() {
 		// TODO Auto-generated method stub
 
 	}
+
 }

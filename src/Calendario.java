@@ -28,8 +28,9 @@ public class Calendario {
 	}
 
 	public void pintar() {
-		calen.pintar();
+
 		app.image(cuadroBuho, 112, 121);
+		
 		app.image(buho, 114, 121);
 		app.image(mas, 157, 28);
 		if (app.mouseX > 155 && app.mouseX < 210 && app.mouseY > 30 && app.mouseY < 80) {
@@ -37,6 +38,8 @@ public class Calendario {
 			app.image(mas, 157, 28);
 			app.noTint();
 		}
+		calen.pintar();
+
 		app.image(calbar2, 112, 408);
 		app.image(calbar, 112, 370);
 		app.image(eliminar, 230, 560);
@@ -77,6 +80,7 @@ public class Calendario {
 				app.noTint();
 			}
 		}
+
 
 	}
 

@@ -58,7 +58,7 @@ public class Home {
 		case 6:
 			dia = "SAB";
 			break;
-		case 7:
+		case 0:
 			dia = "DOM";
 			break;
 		}
